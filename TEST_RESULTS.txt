@@ -1,0 +1,82 @@
+...............                                                          [100%]
+=============================== warnings summary ===============================
+backend/schemas/auth.py:37
+  /mnt/data/intelligent_final_check/backend/schemas/auth.py:37: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class UserOut(BaseModel):
+
+backend/schemas/audit_log.py:23
+  /mnt/data/intelligent_final_check/backend/schemas/audit_log.py:23: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class AuditLog(AuditLogBase):
+
+backend/schemas/flag_history.py:6
+  /mnt/data/intelligent_final_check/backend/schemas/flag_history.py:6: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class FlagHistoryEntry(BaseModel):
+
+backend/schemas/flag_version.py:18
+  /mnt/data/intelligent_final_check/backend/schemas/flag_version.py:18: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class FlagVersion(FlagVersionBase):
+
+backend/schemas/flag.py:44
+  /mnt/data/intelligent_final_check/backend/schemas/flag.py:44: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class Flag(FlagBase):
+
+backend/schemas/flag_target_group.py:14
+  /mnt/data/intelligent_final_check/backend/schemas/flag_target_group.py:14: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class FlagTargetGroup(FlagTargetGroupBase):
+
+backend/schemas/target_user.py:14
+  /mnt/data/intelligent_final_check/backend/schemas/target_user.py:14: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class TargetUser(TargetUserBase):
+
+../../../opt/pyvenv/lib/python3.13/site-packages/pydantic/_internal/_config.py:386
+  /opt/pyvenv/lib/python3.13/site-packages/pydantic/_internal/_config.py:386: UserWarning: Valid config keys have changed in V2:
+  * 'orm_mode' has been renamed to 'from_attributes'
+    warnings.warn(message, UserWarning)
+
+backend/tests/test_auth_router.py: 3 warnings
+backend/tests/test_day16_18_integration.py: 10 warnings
+backend/tests/test_evaluation_router.py: 8 warnings
+backend/tests/test_metrics_router.py: 2 warnings
+  /opt/pyvenv/lib/python3.13/site-packages/sqlalchemy/sql/schema.py:3623: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+backend/tests/test_day16_18_integration.py::test_cleanup_list_only_exposes_candidates_older_than_threshold
+  /mnt/data/intelligent_final_check/backend/tests/test_day16_18_integration.py:72: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    flag.updated_at = datetime.utcnow() - timedelta(days=45)
+
+backend/tests/test_metrics_router.py::test_get_flag_metrics_returns_hourly_7_day_series
+  /mnt/data/intelligent_final_check/backend/tests/test_metrics_router.py:51: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    bucket = datetime.utcnow().replace(minute=0, second=0, microsecond=0)
+
+backend/tests/test_metrics_router.py::test_metrics_endpoint_is_registered_on_app
+  /mnt/data/intelligent_final_check/backend/schemas/environment.py:31: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class Environment(EnvironmentBase):
+
+backend/tests/test_metrics_router.py::test_metrics_endpoint_is_registered_on_app
+  /mnt/data/intelligent_final_check/backend/schemas/targeting_rule.py:16: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class TargetingRule(TargetingRuleBase):
+
+backend/tests/test_metrics_router.py::test_metrics_endpoint_is_registered_on_app
+  /mnt/data/intelligent_final_check/backend/schemas/user_group_membership.py:13: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class UserGroupMembership(UserGroupMembershipBase):
+
+backend/tests/test_metrics_router.py::test_metrics_endpoint_is_registered_on_app
+  /mnt/data/intelligent_final_check/backend/app/main.py:92: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("startup")
+
+backend/tests/test_metrics_router.py::test_metrics_endpoint_is_registered_on_app
+  /opt/pyvenv/lib/python3.13/site-packages/fastapi/applications.py:4579: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+15 passed, 38 warnings in 1.08s
