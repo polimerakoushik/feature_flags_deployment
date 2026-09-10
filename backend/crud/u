@@ -1,0 +1,46 @@
+from sqlalchemy.orm import Session
+
+from models.user import User
+from utils.security import hash_password
+
+
+def get_user_by_email(database: Session, email: str) -> User | None:
+    normalized_email = email.strip().lower()
+    return database.query(User).filter(User.email == normalized_email).first()
+
+
+def get_user_by_id(database: Session, user_id: int) -> User | None:
+    return database.query(User).filter(User.id == user_id).first()
+
+
+def update_user(
+    database: Session,
+    user: User,
+    name: str | None = None,
+    email: str | None = None,
+    company: str | None = None,
+) -> User:
+    if name is not None:
+        user.name = name.strip()
+    if email is not None:
+        user.email = email.strip().lower()
+    if company is not None:
+        user.company = company.strip() or None
+
+    database.commit()
+    database.refresh(user)
+    return user
+
+
+def create_user(database: Session, name: str, email: str, password: str, company: str | None) -> User:
+    user_instance = User(
+        name=name.strip(),
+        email=email.strip().lower(),
+        hashed_password=hash_password(password),
+        company=company.strip() if company else None,
+        role="Admin",
+    )
+    database.add(user_instance)
+    database.commit()
+    database.refresh(user_instance)
+    return user_instance
