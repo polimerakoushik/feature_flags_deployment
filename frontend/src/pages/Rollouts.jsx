@@ -65,7 +65,7 @@ function Rollouts({ onNavigate }) {
         <article className="rollout-stat rollout-stat-blue"><span>⚑</span><div><b>Total Features</b><strong>{total}</strong><small>Feature flags with rollouts</small></div></article>
         <article className="rollout-stat rollout-stat-green"><span>✓</span><div><b>Fully Rolled Out</b><strong>{completed}</strong><small>At 100% rollout</small></div></article>
         <article className="rollout-stat rollout-stat-yellow"><span>◷</span><div><b>In Progress</b><strong>{total - completed}</strong><small>Rollout &lt; 100%</small></div></article>
-        <article className="rollout-stat rollout-stat-purple"><span>▮▮▮</span><div><b>Average Rollout</b><strong>{average}%</strong><small>Across all features</small></div></article>
+        <article className="rollout-stat rollout-stat-purple"><span>📈</span><div><b>Average Rollout</b><strong>{average}%</strong><small>Across all features</small></div></article>
       </section>
 
       <section className="rollout-table-card">
